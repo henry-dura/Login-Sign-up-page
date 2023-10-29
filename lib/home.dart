@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:email_validator/email_validator.dart';
+import 'functions.dart';
 
 class SignUpForm extends StatefulWidget {
   const SignUpForm({super.key});
@@ -37,7 +38,7 @@ class _SignUpFormState extends State<SignUpForm> {
                 Container()
               else
                 TextFormField(
-                  obscureText: true,
+                  // obscureText: true,
                   decoration: const InputDecoration(
                     hintText: 'Enter Username',
                   ),
@@ -113,8 +114,8 @@ class _SignUpFormState extends State<SignUpForm> {
                       // the form is invalid.
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
-                        print(email);
-                        print(passWord);
+                        isLogin? signIn(email, passWord):signUp(email, passWord);
+
                       }
                     },
                     child: Text(
