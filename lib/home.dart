@@ -114,7 +114,7 @@ class _SignUpFormState extends State<SignUpForm> {
                       // the form is invalid.
                       if (_formKey.currentState!.validate()) {
                         _formKey.currentState!.save();
-                        isLogin? signIn(email, passWord):signUp(email, passWord);
+                        isLogin? signIn(email.trim(), passWord.trim()):signUp(email.trim(), passWord.trim());
 
                       }
                     },
